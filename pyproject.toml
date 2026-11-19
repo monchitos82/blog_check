@@ -1,5 +1,5 @@
 [project]
-name = "blog-neocities"
+name = "blog_check"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
