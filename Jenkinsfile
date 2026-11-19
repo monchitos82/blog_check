@@ -7,7 +7,7 @@ pipeline {
 
         // build specifics
         SOURCE = "blog"
-        GIT_URL = "ssh://git@host.containers.internal:2222/jenkins/blog.git"
+        GIT_URL = "ssh://git@host.containers.internal:2222/admin/blog.git"
 
         // Base URL definitions
         BASE_URL = "https://${ACCOUNT}.github.io"
