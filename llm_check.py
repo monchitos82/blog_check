@@ -10,8 +10,11 @@ from otel import (
     setup_otel_tracing,
 )
 
-log = logging.getLogger(__name__)
-
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+)
+log = logging.getLogger("llm-check")
 
 def evaluate_prompt(message: str, system_prompt: str) -> str | None:
     model = None

@@ -23,7 +23,11 @@ from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 
-log = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+)
+log = logging.getLogger("otel")
 
 
 class JsonFormatter(logging.Formatter):
@@ -70,7 +74,6 @@ def setup_otel_logging(otel_settings: dict) -> bool:
 
     try:
         logging.getLogger().addHandler(handler)
-        log.info("Logging instrumented")
     except Exception:
         log.exception("Adding a handler for OTEL logging failed")
         return False
@@ -100,7 +103,6 @@ def setup_otel_tracing(otel_settings: dict) -> trace.Tracer:
         SimpleSpanProcessor(otlp_tracing_exporter)
     )
     trace.set_tracer_provider(tracer_provider)
-    log.info("Tracing ready")
     return trace.get_tracer(service_name)
 
 
@@ -126,6 +128,5 @@ def setup_otel_metrics(otel_settings: dict) -> metrics.Meter:
     meter_provider = MeterProvider(metric_readers=[reader], resource=resource)
     metrics.set_meter_provider(meter_provider)
     meter = metrics.get_meter(__name__)
-    log.info("Metrics ready")
     meter.create_counter(name="requests", description="Number of requests", unit="1")
     return meter
