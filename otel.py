@@ -23,7 +23,7 @@ from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 
-log = logging.getLogger(__name__)
+#log = logging.getLogger(__name__)
 
 
 class JsonFormatter(logging.Formatter):
