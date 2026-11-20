@@ -47,6 +47,7 @@ def evaluate_prompt(message: str, system_prompt: str) -> str | None:
                 log.error(f"No AI message was received, error: {error}")
         else:
             log.error(f"Malformed response was received: {result}")
+    log.info(output)
     return output
 
 
