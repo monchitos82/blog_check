@@ -19,6 +19,12 @@ dependencies = [
     "opentelemetry-instrumentation-langchain>=0.62.4",
     "opentelemetry-instrumentation-ollama>=0.62.4",
     "opentelemetry-sdk>=1.45.2",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.5.0",
 ]
+
 [tool.pytest.ini_options]
-pythonpath = ["."]
+testpaths = ["tests"]
+python_files = [
+    "test_async_scrape.py"
+]
