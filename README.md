@@ -11,4 +11,4 @@ Things you will need for this to work (I use them through podman, but you may ch
   - Ollama (If you want the LLM local check)
   - OTEL (If you want to read through the process, this is 100% **optional**)
 
-
+Ollama checks may fail, still you get the benefit of cloning your site for local testing.
