@@ -28,3 +28,18 @@ jobs:
 
       - name: Run pytest
         run: uv run pytest
+
+  bandit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for security issues using bandit
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+        with:
+          enable-cache: true
+
+      - name: Run Bandit
+        run: uv run bandit *.py
+
