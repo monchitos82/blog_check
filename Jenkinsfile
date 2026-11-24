@@ -10,7 +10,7 @@ pipeline {
         GIT_URL = "ssh://git@host.containers.internal:2222/admin/blog.git"
 
         // Base URL definitions
-        BASE_URL = "https://${ACCOUNT}.github.io"
+        BASE_URL = "https://${ACCOUNT}.github.io/blog"
         LOCAL_BASE_URL = "http://127.0.0.1:2080/site/blog"
 
         // Local copy definitions
